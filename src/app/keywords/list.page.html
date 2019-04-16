@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Saved Keywords
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [hidden]="!tips.length">
+    <ion-list-header color='primary'>
+      <ion-label>Subscription</ion-label>
+    </ion-list-header>
+    <ion-item-sliding *ngFor="let tip of tips"  #slidingItem>
+      <ion-item>
+        <ion-label>
+          {{tip.keywords}}
+        </ion-label>
+        <ion-note slot="end">
+          expires on {{tip.expiredDate | date:"yyyy/MM/dd"}}
+        </ion-note>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="delete(tip._id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+          <!-- Delete -->
+        </ion-item-option>
+        <ion-item-option (click)="delay(slidingItem,tip)">
+          <ion-icon slot="icon-only" name="clock"></ion-icon>
+          <!-- + 2 Weeks -->
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-grid [hidden]="!localKeywords.length">
+    <ion-row>
+      <ion-col size="8">
+        <ion-note>Local History</ion-note>
+      </ion-col>
+      <ion-col size="4" >
+          <a (click)="clearHistory()">
+              clear all
+          </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-chip *ngFor="let item of localKeywords" >{{item}}</ion-chip>
+</ion-content>

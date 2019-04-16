@@ -1,0 +1,13 @@
+
+<ion-searchbar [(ngModel)]="keywords" 
+    (keyup.enter)='search()' 
+    (ionFocus)='showTips()' 
+    (ionCancel)='hideTips()'
+    animated showCancelButton>
+</ion-searchbar>  
+<ion-list [hidden]="!tipsShow">
+    <ion-item *ngFor="let tip of tips" (click)="resetKeywords(tip)">
+        <ion-icon name="clock" slot="start"></ion-icon>
+        <ion-label>{{tip}}</ion-label>
+    </ion-item>
+</ion-list>

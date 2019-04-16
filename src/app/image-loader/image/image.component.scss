@@ -1,0 +1,16 @@
+$maxHeight:50vh;
+$maxWidth:50vw;
+$marginLeft:25%;
+ion-img {
+    max-height: $maxHeight;
+    overflow: hidden;
+    width: 50%;
+    max-width: $maxWidth;
+    margin-left: $marginLeft;
+    margin-top: 10px;
+}
+ion-spinner{
+    margin-top: $maxHeight/4;
+    margin-bottom:$maxHeight/4;
+    margin-left: 45%;
+}

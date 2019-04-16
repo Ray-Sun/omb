@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Email Setting
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+  <ion-label position="floating" >Your Email:</ion-label>
+  <ion-input [(ngModel)]="email" ></ion-input>
+</ion-item>
+<ion-button shape="round" expand='full' (click)="saveEmail()">
+  Save
+</ion-button>
+</ion-content>
+

@@ -1,0 +1,6 @@
+$saveBtnWidth:40%;
+ion-button{
+    margin-top: 20px;
+    margin-left: (100%-$saveBtnWidth)/2;
+    width: $saveBtnWidth;
+}

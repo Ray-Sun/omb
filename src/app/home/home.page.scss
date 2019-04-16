@@ -1,0 +1,21 @@
+ion-content{
+  
+  .feed-card {
+    a {
+      color: unset;
+      text-decoration: none;
+    }
+  }
+  
+  .noFeedTips{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    ion-note{
+      display:block;
+      margin-bottom: 5px;
+    }
+  }
+
+}
+
